@@ -10,7 +10,8 @@ var s3 = knox.createClient({
 
 var server = http.createServer(function(req, res) {
     s3.get(req.url).on('response', function(res_from_s3){
-        res_from_s3.setEncoding('utf8');
+        res.writeHead(res_from_s3.statusCode,
+                      { 'content-type': res_from_s3.headers['content-type'] });
         res_from_s3.on('data', function(chunk){
             res.write(chunk);
         });
