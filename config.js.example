@@ -1,0 +1,8 @@
+exports.config = function() {
+    return {
+        key:    'XXXXXXXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        bucket: 'foo',
+        port:   8080
+    };
+}
